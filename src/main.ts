@@ -1,14 +1,8 @@
-///<reference path="Printer.ts"/>
 import {Printer} from "./Printer";
 import {writeArray, User} from "./WriteArray";
 
 const el = document.getElementById('targetHtml');
-const printer = new Printer(el, 'p', 'Привет!!!');
-
-
-function getMyName(myName: string): string {
-    return myName;
-}
+const printer = new Printer(el, 'h1', 'Привет!!!');
 
 function getMyAge(myAge: number, prefix: string = ' годиков'): string {
     return myAge + prefix;
@@ -27,15 +21,6 @@ document.write(wrtInTag('span', getMyAge(40, ' лет мне и это хоро�
 document.write(wrtInTag('span', getMyAge(40, ' лет мне и это хорошо!')));
 // --------------------------------------------------------------------------
 
-// function writeIt(user: User) {
-//     const myTargetElem: HTMLElement = document.getElementById('targetHtml');
-//     let result: string = '';
-//     for (let i = 0; i < user.getJobs().length; i++) {
-//         const printer = new Printer(myTargetElem, 'h1', user.getJobs()[i]);
-//     }
-// }
-
-// type User = {name: string, age: number, jobs: string[], getJobs: () => string[]};
 let user: User = {
     name: 'Vinty',
     jobs: ['a', 'b', 'c'],
